@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  database:
+    image: postgres
+    container_name: trading_database
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: trading_postgres
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "user", "-d", "trading_postgres" ]
+      interval: 2s
+      timeout: 2s
+      retries: 5
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  migrate:
+    build: .
+    container_name: trading_migrate
+    command: >
+      sh -c "python manage.py makemigrations &&
+      python manage.py migrate"
+    depends_on:
+      database:
+        condition: service_healthy
+    env_file:
+      - .env
+
+  api:
+    build: .
+    container_name: trading_api
+    ports:
+      - "8000:8000"
+    command: >
+      sh -c "python manage.py collectstatic -c --no-input 
+      && gunicorn trading_platform.wsgi:application -w 4 -b 0.0.0.0:8000"
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    env_file:
+      - .env
+    volumes:
+      - django_static:/trading_platform_api/static
+
+  adminer:
+    image: adminer
+    container_name: trading_adminer
+    ports:
+      - "8080:8080"
+
+volumes:
+  postgres_data:
+  django_static:

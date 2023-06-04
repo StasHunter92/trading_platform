@@ -1,0 +1,52 @@
+[
+  {
+    "model": "api.contact",
+    "fields": {
+      "email": "info@nvidia.com",
+      "country": "США",
+      "city": "Санта-Клара",
+      "street_name": "San Tomas Expressway",
+      "building_number": "2701"
+    }
+  },
+  {
+    "model": "api.contact",
+    "fields": {
+      "email": "apple@icloud.com",
+      "country": "США",
+      "city": "Купертино",
+      "street_name": "1 Infinite Loop",
+      "building_number": null
+    }
+  },
+  {
+    "model": "api.contact",
+    "fields": {
+      "email": "marina.klenina@eldorado.ru",
+      "country": "Россия",
+      "city": "Москва",
+      "street_name": "ул. Красносельская Нижн",
+      "building_number": "40/12"
+    }
+  },
+  {
+    "model": "api.contact",
+    "fields": {
+      "email": "roscomputer@mail.ru",
+      "country": "Россия",
+      "city": "Нижний Новгород",
+      "street_name": "ул. Маршала Казакова",
+      "building_number": "3а"
+    }
+  },
+  {
+    "model": "api.contact",
+    "fields": {
+      "email": "info@technolove.ru",
+      "country": "Россия",
+      "city": "Санкт-Петербург",
+      "street_name": "ул. Профессора Попова",
+      "building_number": "27"
+    }
+  }
+]

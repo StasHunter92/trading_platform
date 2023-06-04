@@ -1,0 +1,73 @@
+[
+  {
+    "model": "api.supplier",
+    "fields": {
+      "type": 1,
+      "title": "Nvidia",
+      "contact": 1,
+      "products": [
+        3,
+        4
+      ],
+      "created": "2023-06-03"
+    }
+  },
+  {
+    "model": "api.supplier",
+    "fields": {
+      "type": 1,
+      "title": "Apple Inc",
+      "contact": 2,
+      "products": [
+        1,
+        2
+      ],
+      "created": "2023-06-03"
+    }
+  },
+  {
+    "model": "api.supplier",
+    "fields": {
+      "type": 2,
+      "title": "Эльдорадо",
+      "contact": 3,
+      "products": [
+        1
+      ],
+      "supplier": 2,
+      "indebtedness": 500000,
+      "created": "2023-06-03",
+      "level": 1
+    }
+  },
+  {
+    "model": "api.supplier",
+    "fields": {
+      "type": 3,
+      "title": "Роскомпьютер",
+      "contact": 4,
+      "products": [
+        4
+      ],
+      "supplier": 1,
+      "indebtedness": 300000,
+      "created": "2023-06-03",
+      "level": 1
+    }
+  },
+  {
+    "model": "api.supplier",
+    "fields": {
+      "type": 3,
+      "title": "Технолав",
+      "contact": 5,
+      "products": [
+        1
+      ],
+      "supplier": 3,
+      "indebtedness": 800000,
+      "created": "2023-06-03",
+      "level": 2
+    }
+  }
+]
